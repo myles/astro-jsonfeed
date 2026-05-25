@@ -5,10 +5,12 @@ Add a [JSON Feed](https://www.jsonfeed.org) to blogs, changelogs, or any chronol
 ## Installation and use
 
 1. Install `astro-jsonfeed` using your preferred package manager:
-   **npm**: `npm install astro-jsonfeed`
-   **pnpm**: `pnpm add astro-jsonfeed`
-   **Yarn**: `yarn add astro-jsonfeed`
+   - **npm**: `npm install astro-jsonfeed`
+   - **pnpm**: `pnpm add astro-jsonfeed`
+   - **Yarn**: `yarn add astro-jsonfeed`
+
 2. Create a file in the `src/pages` directory with a name of your choice and the extension `.json.js` (or `.json.ts` if you are using Typescript) to be used as the output URL for the feed. A somewhat common convention is to use `feed.json`.
+
 3. Import the `jsonFeed()` helper from `astro-jsonfeed` package into your page file and export a function that returns it using the following parameters:
 ```ts
 import jsonFeed from "astro-jsonfeed";
