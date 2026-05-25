@@ -38,7 +38,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
-    "astro": "^5.0.0",
+    "astro": "^6.1.10",
     "prettier": "^3.8.3",
     "typescript": "^5.9.3",
     "vitest": "^4.1.7"
