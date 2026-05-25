@@ -1,0 +1,37 @@
+{
+  "name": "astro-jsonfeed",
+  "version": "1.0.0",
+  "description": "Generate a JSON Feed for your Astro site.",
+  "keywords": [
+    "astro",
+    "jsonfeed"
+  ],
+  "homepage": "https://github.com/myles/astro-jsonfeed#readme",
+  "bugs": {
+    "url": "https://github.com/myles/astro-jsonfeed/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myles/astro-jsonfeed.git"
+  },
+  "license": "MIT",
+  "author": "Myles Braithwaite",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "vitest",
+    "prettier": "prettier . -c",
+    "prettier:write": "prettier . --write"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "astro": "^5.0.0",
+    "prettier": "^3.8.3",
+    "vitest": "^4.1.7"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0"
+  }
+}
