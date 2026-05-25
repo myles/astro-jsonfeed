@@ -1,1 +1,2 @@
-export { getJsonFeedResponse as jsonFeed } from "./core";
+import { getJsonFeedResponse } from "./core.js";
+export default getJsonFeedResponse;

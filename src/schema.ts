@@ -5,11 +5,15 @@ const dateSchema = z
   .transform((value) => new Date(value))
   .refine((value) => !isNaN(value.getTime()));
 
-export const jsonFeedAuthorSchema = z.object({
-  name: z.string().optional(),
-  url: z.url().optional(),
-  avatar: z.url().optional(),
-});
+export const jsonFeedAuthorSchema = z
+  .object({
+    name: z.string().optional(),
+    url: z.url().optional(),
+    avatar: z.url().optional(),
+  })
+  .refine((a) => a.name || a.url || a.avatar, {
+    error: "Author must have at least one of: name, url, or avatar.",
+  });
 
 export const jsonFeedAttachmentSchema = z.object({
   url: z.url(),

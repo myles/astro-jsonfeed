@@ -4,7 +4,7 @@ import {
   jsonFeedAuthorSchema,
   jsonFeedItemSchema,
   jsonFeedSchema,
-} from "./schema";
+} from "./schema.js";
 
 export type JsonFeedOptions = {
   title: z.infer<typeof jsonFeedSchema>["title"];

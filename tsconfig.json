@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // Compilation target — ES2022 covers everything Astro 5/6 requires (Node 18+)
+    "target": "ES2022",
+
+    // NodeNext: correct mode for a Node ESM package ("type": "module")
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // Emit compiled JS + type declarations into dist/
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // Strictness
+    "strict": true,
+
+    // Skip type-checking of .d.ts files inside node_modules (speeds up builds,
+    // avoids noise from third-party type quirks)
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["src/__tests__", "node_modules", "dist"]
+}
