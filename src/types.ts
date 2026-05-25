@@ -18,7 +18,7 @@ export type JsonFeedOptions = {
   authors?: z.infer<typeof jsonFeedAuthorSchema>[];
   language?: z.infer<typeof jsonFeedSchema>["language"];
   expired?: z.infer<typeof jsonFeedSchema>["expired"];
-  items: z.infer<typeof jsonFeedItemSchema>[];
+  items: z.input<typeof jsonFeedItemSchema>[];
 };
 
 export type JsonFeedItem = {
@@ -31,8 +31,8 @@ export type JsonFeedItem = {
   summary?: z.infer<typeof jsonFeedItemSchema>["summary"];
   image?: z.infer<typeof jsonFeedItemSchema>["image"];
   banner_image?: z.infer<typeof jsonFeedItemSchema>["banner_image"];
-  date_published?: z.infer<typeof jsonFeedItemSchema>["date_published"];
-  date_modified?: z.infer<typeof jsonFeedItemSchema>["date_modified"];
+  date_published?: z.input<typeof jsonFeedItemSchema>["date_published"];
+  date_modified?: z.input<typeof jsonFeedItemSchema>["date_modified"];
   authors?: z.infer<typeof jsonFeedAuthorSchema>[];
   tags?: z.infer<typeof jsonFeedItemSchema>["tags"];
   language?: z.infer<typeof jsonFeedItemSchema>["language"];
