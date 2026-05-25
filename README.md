@@ -19,7 +19,6 @@ export function GET(context) {
   return jsonFeed({
     title: "Arrietty's Blog",
     description: "Notes from under the floorboards.",
-    site: context.site,
     items: [
       {
         id: "/kitchen",
