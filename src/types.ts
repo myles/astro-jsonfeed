@@ -6,6 +6,10 @@ import {
   jsonFeedSchema,
 } from "./schema.js";
 
+export type JsonFeedOutputOptions = {
+  space?: number;
+};
+
 export type JsonFeedOptions = {
   title: z.infer<typeof jsonFeedSchema>["title"];
   home_page_url?: z.infer<typeof jsonFeedSchema>["home_page_url"];

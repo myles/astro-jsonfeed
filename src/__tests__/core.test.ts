@@ -17,6 +17,18 @@ describe("getJsonFeedString", () => {
     expect(result).toContain('"date_published":"2024-06-01T08:00:00.000Z"');
     expect(result).toContain('"date_modified":"2024-06-15T12:30:00.000Z"');
   });
+  it("successfully renders with two spaces", () => {
+    const result = getJsonFeedString(minimalOptions, { space: 2 });
+    expect(result).toBe(`{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Arrietty's Blog",
+  "items": [
+    {
+      "id": "/kitchen"
+    }
+  ]
+}`);
+  });
 });
 
 describe("validateJsonFeedOptions", () => {
