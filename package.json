@@ -1,6 +1,6 @@
 {
   "name": "astro-jsonfeed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate a JSON Feed for your Astro site.",
   "keywords": [
     "astro",
@@ -18,11 +18,15 @@
   "author": "Myles Braithwaite",
   "type": "module",
   "main": "./dist/index.js",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
     }
   },
   "files": [
