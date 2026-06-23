@@ -43,12 +43,12 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
-    "astro": "^6.1.10",
-    "prettier": "^3.8.3",
+    "astro": "^7.0.0",
+    "prettier": "^3.8.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.7"
+    "vitest": "^4.1.9"
   },
   "peerDependencies": {
-    "astro": "^5.0.0 || ^6.0.0"
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
   }
 }
