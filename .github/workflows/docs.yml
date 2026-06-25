@@ -1,0 +1,59 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: checkout
+        name: 📥 Checkout code
+        uses: actions/checkout@v7
+
+      - id: setup-node
+        name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+          cache: "npm"
+
+      - id: install-dependencies
+        name: 📦 Install dependencies
+        run: npm ci
+
+      - id: build
+        name: 🏗️ Build docs
+        run: npm run build
+        working-directory: docs
+
+      - id: upload-pages
+        name: 📤 Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        name: 🚀 Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
