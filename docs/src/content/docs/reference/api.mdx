@@ -45,67 +45,67 @@ import { validateJsonFeedOptions } from "astro-jsonfeed";
 
 The primary options object passed to `getJsonFeedResponse` or `getJsonFeedString`.
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `title` | `string` | Yes | Name of the feed. |
-| `items` | `JsonFeedItem[]` | Yes | Array of feed items. |
-| `home_page_url` | `string` | No | URL of the site the feed is for. |
-| `feed_url` | `string` | No | URL of the feed itself. |
-| `description` | `string` | No | Human-readable description of the feed. |
-| `user_comment` | `string` | No | A note for people looking at the raw JSON. |
-| `next_url` | `string` | No | URL of the next page of items (for pagination). |
-| `icon` | `string` | No | URL to an image representing the feed (square, ≥512px). |
-| `favicon` | `string` | No | URL to a small image (≤32px). |
-| `authors` | `JsonFeedAuthor[]` | No | Authors of the feed. |
-| `language` | `string` | No | BCP 47 language tag (e.g. `"en-US"`). |
-| `expired` | `boolean` | No | If `true`, the feed will not update further. |
+| Field           | Type               | Required | Description                                             |
+| --------------- | ------------------ | -------- | ------------------------------------------------------- |
+| `title`         | `string`           | Yes      | Name of the feed.                                       |
+| `items`         | `JsonFeedItem[]`   | Yes      | Array of feed items.                                    |
+| `home_page_url` | `string`           | No       | URL of the site the feed is for.                        |
+| `feed_url`      | `string`           | No       | URL of the feed itself.                                 |
+| `description`   | `string`           | No       | Human-readable description of the feed.                 |
+| `user_comment`  | `string`           | No       | A note for people looking at the raw JSON.              |
+| `next_url`      | `string`           | No       | URL of the next page of items (for pagination).         |
+| `icon`          | `string`           | No       | URL to an image representing the feed (square, ≥512px). |
+| `favicon`       | `string`           | No       | URL to a small image (≤32px).                           |
+| `authors`       | `JsonFeedAuthor[]` | No       | Authors of the feed.                                    |
+| `language`      | `string`           | No       | BCP 47 language tag (e.g. `"en-US"`).                   |
+| `expired`       | `boolean`          | No       | If `true`, the feed will not update further.            |
 
 ### `JsonFeedItem`
 
 Represents a single item in the feed.
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `id` | `string` | Yes | Unique identifier for the item. |
-| `url` | `string` | No | Permalink URL of the item. |
-| `external_url` | `string` | No | URL the item points to (for link blogs). |
-| `title` | `string` | No | Title of the item. |
-| `content_html` | `string` | No | HTML content of the item. |
-| `content_text` | `string` | No | Plain text content of the item. |
-| `summary` | `string` | No | Short summary. |
-| `image` | `string` | No | URL to the item's primary image. |
-| `banner_image` | `string` | No | URL to a banner image. |
-| `date_published` | `string \| number \| Date` | No | Date the item was published. |
-| `date_modified` | `string \| number \| Date` | No | Date the item was last modified. |
-| `authors` | `JsonFeedAuthor[]` | No | Authors of this specific item. |
-| `tags` | `string[]` | No | Tags/categories for the item. |
-| `language` | `string` | No | BCP 47 language tag. |
-| `attachments` | `JsonFeedAttachment[]` | No | Attached media (e.g. podcast audio). |
+| Field            | Type                       | Required | Description                              |
+| ---------------- | -------------------------- | -------- | ---------------------------------------- |
+| `id`             | `string`                   | Yes      | Unique identifier for the item.          |
+| `url`            | `string`                   | No       | Permalink URL of the item.               |
+| `external_url`   | `string`                   | No       | URL the item points to (for link blogs). |
+| `title`          | `string`                   | No       | Title of the item.                       |
+| `content_html`   | `string`                   | No       | HTML content of the item.                |
+| `content_text`   | `string`                   | No       | Plain text content of the item.          |
+| `summary`        | `string`                   | No       | Short summary.                           |
+| `image`          | `string`                   | No       | URL to the item's primary image.         |
+| `banner_image`   | `string`                   | No       | URL to a banner image.                   |
+| `date_published` | `string \| number \| Date` | No       | Date the item was published.             |
+| `date_modified`  | `string \| number \| Date` | No       | Date the item was last modified.         |
+| `authors`        | `JsonFeedAuthor[]`         | No       | Authors of this specific item.           |
+| `tags`           | `string[]`                 | No       | Tags/categories for the item.            |
+| `language`       | `string`                   | No       | BCP 47 language tag.                     |
+| `attachments`    | `JsonFeedAttachment[]`     | No       | Attached media (e.g. podcast audio).     |
 
 ### `JsonFeedAuthor`
 
 At least one of `name`, `url`, or `avatar` must be provided.
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `name` | `string` | Author's name. |
-| `url` | `string` | URL of the author's site or profile. |
-| `avatar` | `string` | URL to an avatar image. |
+| Field    | Type     | Description                          |
+| -------- | -------- | ------------------------------------ |
+| `name`   | `string` | Author's name.                       |
+| `url`    | `string` | URL of the author's site or profile. |
+| `avatar` | `string` | URL to an avatar image.              |
 
 ### `JsonFeedAttachment`
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `url` | `string` | Yes | URL to the attachment. |
-| `mime_type` | `string` | Yes | MIME type (e.g. `"audio/mpeg"`). |
-| `title` | `string` | No | Title of the attachment. |
-| `size_in_bytes` | `number` | No | File size in bytes. |
-| `duration_in_seconds` | `number` | No | Duration in seconds (for audio/video). |
+| Field                 | Type     | Required | Description                            |
+| --------------------- | -------- | -------- | -------------------------------------- |
+| `url`                 | `string` | Yes      | URL to the attachment.                 |
+| `mime_type`           | `string` | Yes      | MIME type (e.g. `"audio/mpeg"`).       |
+| `title`               | `string` | No       | Title of the attachment.               |
+| `size_in_bytes`       | `number` | No       | File size in bytes.                    |
+| `duration_in_seconds` | `number` | No       | Duration in seconds (for audio/video). |
 
 ### `JsonFeedOutputOptions`
 
 Optional second argument to `getJsonFeedResponse` and `getJsonFeedString`.
 
-| Field | Type | Description |
-|-------|------|-------------|
+| Field   | Type     | Description                                                        |
+| ------- | -------- | ------------------------------------------------------------------ |
 | `space` | `number` | Passed to `JSON.stringify` — set to `2` for pretty-printed output. |
