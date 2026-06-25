@@ -1,0 +1,12 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro";
+
+if (Astro.url.pathname === "/") {
+  const head = Astro.locals.starlightRoute.head;
+  const titleEntry = head.find((h) => h.tag === "title");
+  if (titleEntry) titleEntry.content = "astro-jsonfeed";
+}
+---
+
+<Default {...Astro.props} />
+<link rel="alternate" type="application/feed+json" title="astro-jsonfeed Changelog" href={Astro.site ? new URL("/feed.json", Astro.site).href : "/feed.json"} />

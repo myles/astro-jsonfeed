@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+const entries = await getCollection("changelog");
+const sorted = entries.sort((a, b) => (a.id > b.id ? -1 : 1));
+---
+
+<StarlightPage frontmatter={{ title: "Changelog" }}>
+  {
+    sorted.map((entry) => (
+      <section>
+        <h2>{entry.data.title}</h2>
+        {entry.data.description && <p>{entry.data.description}</p>}
+        <Fragment set:html={entry.rendered?.html ?? ""} />
+      </section>
+    ))
+  }
+</StarlightPage>

@@ -17,8 +17,6 @@
   "license": "MIT",
   "author": "Myles Braithwaite",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -29,15 +27,20 @@
       "default": "./dist/types.js"
     }
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "workspaces": [
+    "docs"
   ],
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test": "vitest",
     "prettier": "prettier . -c",
-    "prettier:write": "prettier . --write"
+    "prettier:write": "prettier . --write",
+    "test": "vitest"
   },
   "dependencies": {
     "zod": "^4.0.0"

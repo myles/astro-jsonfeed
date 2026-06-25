@@ -1,0 +1,15 @@
+{
+  "name": "astro-jsonfeed-docs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.1",
+    "astro": "^7.0.2",
+    "astro-jsonfeed": "*"
+  }
+}

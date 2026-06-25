@@ -1,0 +1,24 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+---
+
+<Default {...Astro.props} />
+<p class="built-by">
+  Built by <a href="https://myles.garden">Myles</a> with love in Toronto, Canada.
+</p>
+
+<style>
+  .built-by {
+    text-align: center;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    margin: 1.5rem 0 0;
+    padding-bottom: 1.5rem;
+  }
+  .built-by a {
+    color: var(--sl-color-gray-3);
+  }
+  .built-by a:hover {
+    color: var(--sl-color-white);
+  }
+</style>

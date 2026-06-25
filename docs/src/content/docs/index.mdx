@@ -1,0 +1,74 @@
+---
+title: Getting Started
+description: How to install and use astro-jsonfeed in your Astro project.
+head:
+  - tag: title
+    content: astro-jsonfeed
+---
+
+`astro-jsonfeed` generates a [JSON Feed](https://www.jsonfeed.org) for your Astro site. It works with blogs, changelogs, or any other chronological content.
+
+## Installation
+
+Install the package using your preferred package manager:
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm install astro-jsonfeed
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm add astro-jsonfeed
+    ```
+  </TabItem>
+  <TabItem label="Yarn">
+    ```sh
+    yarn add astro-jsonfeed
+    ```
+  </TabItem>
+</Tabs>
+
+## Usage
+
+Create a file in `src/pages/` with the extension `.json.js` or `.json.ts`. A common convention is `feed.json`.
+
+```ts
+// src/pages/feed.json.ts
+import jsonFeed from "astro-jsonfeed";
+
+export function GET(context) {
+  return jsonFeed({
+    title: "Arrietty's Blog",
+    description: "Notes from under the floorboards.",
+    items: [
+      {
+        id: "/kitchen",
+        url: new URL("/kitchen", context.site).href,
+        title: "First Expedition to the Kitchen",
+        content_text:
+          "Father finally said I could come up. Up! Through the wall, past the clock, all the way to the kitchen.",
+        content_html:
+          "<p>Father finally said I could come up. Up! Through the wall, past the clock, all the way to the kitchen.</p>",
+        date_published: "2026-05-25T23:30:15-04:00",
+        tags: ["borrows"],
+      },
+    ],
+  });
+}
+```
+
+The response will have `Content-Type: application/feed+json` set automatically.
+
+## Named exports
+
+If you prefer named imports, both `getJsonFeedResponse` and `getJsonFeedString` are available:
+
+```ts
+import { getJsonFeedResponse, getJsonFeedString } from "astro-jsonfeed";
+```
+
+See the [API reference](/reference/api) for the full list of options.
